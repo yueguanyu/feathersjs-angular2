@@ -15,26 +15,28 @@ const HOST = 'http://feathersjs-aurerua.c9users.io'
 
 @Injectable()
 export class RestService {
-  public _app: any;
+  public app: any;
   debugString="Rest is ok for now!";
   
   constructor() {
-    this._app = feathers() // Initialize feathers
+    this.app = feathers() // Initialize feathers
       .configure(rest(HOST).superagent(superagent)) // Fire up rest
-      .configure(hooks()); // Configure feathers-hooks
+      .configure(hooks()) // Configure feathers-hooks
+      .configure(authentication({path:'/auth/local'}));
   }
 }
 
 @Injectable()
 export class SocketService {
   public socket: any;
-  public _app: any;
+  public app: any;
   debugString="Socket is ok for now!";
 
   constructor() {
     this.socket = io(HOST);
-    this._app = feathers()
+    this.app = feathers()
       .configure(socketio(this.socket))
       .configure(hooks())
+      .configure(authentication({path:'/auth/local'}));
   }
 }

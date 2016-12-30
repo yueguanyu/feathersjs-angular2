@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,14 @@ import { Component, OnInit } from '@angular/core';
         <div class="col-12 col-6-tablet push-3-tablet col-4-desktop push-4-desktop">
           <form class="form" method="post" action="/auth/local">
             <fieldset>
-              <input class="block" type="email" name="email" placeholder="email">
+              <input #email class="block" type="email" name="email" placeholder="email">
             </fieldset>
 
             <fieldset>
-              <input class="block" type="password" name="password" placeholder="password">
+              <input #password class="block" type="password" name="password" placeholder="password">
             </fieldset>
 
-            <button type="submit" class="button button-primary block login">
+            <button (click)="login(email.value,password.value)" class="button button-primary block login">
               Login
             </button>
           </form>
@@ -30,8 +31,12 @@ import { Component, OnInit } from '@angular/core';
   `
 })
 export class LoginComponent implements OnInit {
+  
+  login(email:string, password:string){
+    this.user.login(email,password);
+  }
 
-  constructor() { }
+  constructor(private user: UserService) { }
 
   ngOnInit() {
   }

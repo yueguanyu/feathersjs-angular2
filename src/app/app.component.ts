@@ -7,9 +7,7 @@ import { MessageService } from './message.service'
   template: `
   <router-outlet></router-outlet> <!-- Routed views go here -->
   
-  <!--<div class="message" *ngFor="let message of _messages">-->
-  <!-- <h1 class="title">{{_messages.name}}</h1> -->
-  <!--</div>-->
+
   
   <nav>
     <a routerLink="/authenticate" routerLinkActive="active">Authentication</a>
@@ -21,26 +19,30 @@ import { MessageService } from './message.service'
    <h2>{{title}}</h2>
   
   <h2>Feedback</h2>
-  <ul>
+  <!-- <ul>
     <li>Rest service: {{rest.debugString}}</li>
     <li>Socket service: {{socket.debugString}}</li>
-    <li>Message service: {{_messageService.debugString}}</li>
-  </ul>
+    <li>Message service: {{messageService.debugString}}</li>
+  </ul>-->
   
   `
 })
 
 export class AppComponent {
-//  private _messages: any[] = [];
-  private _messages: any = {};
+//  private messages: any[] = [];
+  private messages: any = {};
   title = 'app works!';
   
-  constructor(private rest:RestService, private socket:SocketService, private _messageService: MessageService) {}
+  constructor(
+    // private rest:RestService, 
+    // private socket:SocketService, 
+    // private messageService: MessageService
+    ) {}
   
   // Called once when the component is early in its creation
   ngOnInit() {
-    // this._messageService.find({}).then(messages => {
-    //   this._messages = messages;
+    // this.messageService.find({}).then(messages => {
+    //   this.messages = messages;
     //   console.log(messages);
     // });
   }

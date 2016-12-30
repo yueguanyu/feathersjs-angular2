@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { RestService, SocketService } from './feathers.service';
 import { MessageService } from './message.service';
+import { UserService } from './user.service';
 
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authenticate.component';
@@ -30,9 +31,10 @@ import { PageNotFoundComponent } from './not-found.component';
     PageNotFoundComponent
   ],
   providers: [
-    RestService, 
-    SocketService,
-    MessageService
+    RestService,
+    UserService,
+    SocketService
+   // MessageService
   ],
   bootstrap: [AppComponent]
 })
