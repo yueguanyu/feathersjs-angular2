@@ -12,7 +12,7 @@ export class MessageService {
     private _restService: RestService
   ) {
     // Let's get both the socket.io and REST feathers services for messages!
-    this._rest = _restService._app.service('messages');
+    //this._rest = _restService._app.service('messages');
 //    this._socket = _socketService._app.service('lessons/0G1cMv0AaggQzVqL');
   }
   

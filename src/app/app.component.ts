@@ -15,6 +15,7 @@ import { MessageService } from './message.service'
   </ul>
   
   <nav>
+    <a routerLink="/authenticate" routerLinkActive="active">Authentication</a>
     <a routerLink="/signup" routerLinkActive="active">Sign up</a>
     <a routerLink="/login" routerLinkActive="active">Login</a>
     <a routerLink="/chat" routerLinkActive="active">Chat</a>

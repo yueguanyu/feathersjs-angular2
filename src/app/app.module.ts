@@ -8,10 +8,11 @@ import { RestService, SocketService } from './feathers.service';
 import { MessageService } from './message.service';
 
 import { AppComponent } from './app.component';
+import { AuthenticationComponent } from './authenticate.component';
+import { SignUpComponent } from './signup.component';
 import { LoginComponent } from './login.component';
 import { ChatComponent } from './chat.component';
 import { PageNotFoundComponent } from './not-found.component';
-import { SignUpComponent } from './signup.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { SignUpComponent } from './signup.component';
   ],
   declarations: [
     AppComponent,
+    AuthenticationComponent,
     SignUpComponent,
     LoginComponent,
     ChatComponent,
