@@ -5,7 +5,20 @@ import { MessageService } from './message.service'
 @Component({
   selector: 'app-root',
   template: `
-  <h2>{{title}}</h2>
+  <router-outlet></router-outlet> <!-- Routed views go here -->
+  
+  <!--<div class="message" *ngFor="let message of _messages">-->
+  <!-- <h1 class="title">{{_messages.name}}</h1> -->
+  <!--</div>-->
+  
+  <nav>
+    <a routerLink="/authenticate" routerLinkActive="active">Authentication</a>
+    <a routerLink="/signup" routerLinkActive="active">Sign up</a>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/chat" routerLinkActive="active">Chat</a>
+  </nav>
+  
+   <h2>{{title}}</h2>
   
   <h2>Feedback</h2>
   <ul>
@@ -14,19 +27,6 @@ import { MessageService } from './message.service'
     <li>Message service: {{_messageService.debugString}}</li>
   </ul>
   
-  <nav>
-    <a routerLink="/authenticate" routerLinkActive="active">Authentication</a>
-    <a routerLink="/signup" routerLinkActive="active">Sign up</a>
-    <a routerLink="/login" routerLinkActive="active">Login</a>
-    <a routerLink="/chat" routerLinkActive="active">Chat</a>
-  </nav>
-    
-  <h2>Router outlet</h2>
-  <router-outlet></router-outlet> <!-- Routed views go here -->
-  
-  <!--<div class="message" *ngFor="let message of _messages">-->
-  <!-- <h1 class="title">{{_messages.name}}</h1> -->
-  <!--</div>-->
   `
 })
 
