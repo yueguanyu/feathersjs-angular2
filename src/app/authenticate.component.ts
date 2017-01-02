@@ -17,15 +17,13 @@ import { Component, OnInit } from '@angular/core';
         <div class="col-12 push-4-tablet col-4-tablet">
           <div class="row">
             <div class="col-12">
-              <a href="login.html" class="button button-primary block login">
-                Login
-              </a>
+                <a routerLink="/login" class="button button-primary block login">Login</a>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12">
-              <a href="signup.html" class="button button-primary block signup">
+              <a  routerLink="/signup"  class="button button-primary block signup">
                 Signup
               </a>
             </div>
