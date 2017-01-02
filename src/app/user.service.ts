@@ -10,14 +10,14 @@ export class UserService {
   constructor(private feathersService: FeathersService) {
     this.service = feathersService.app.service('users');
     // Find all users
-    // this.service.find({}).then(() => {
-    //   this.users = page.data
-    // })
+    this.service.find().then((page) => {
+      this.users = page.data;
+    })
 
     // We will also see when new users get created in real-time
-    // userService.on('created', user => {
-    //   this.users.push(user)
-    // })
+    userService.on('created', user => {
+      this.users.push(user);
+    })
   }
 
   find(query: any) {
