@@ -3,17 +3,17 @@ import { RestService, SocketService } from './feathers.service';
 
 @Injectable()
 export class MessageService {
-//  private socket;
+  private socket;
   private rest;
   debugString = "Hi, from Message Service!";
 
   constructor(
-//    private socketService: SocketService,
+    private socketService: SocketService,
     private restService: RestService
   ) {
     // Let's get both the socket.io and REST feathers services for messages!
-    //this.rest = restService.app.service('messages');
-//    this.socket = socketService.app.service('lessons/0G1cMv0AaggQzVqL');
+    this.rest = restService.app.service('messages');
+    this.socket = socketService.app.service('messages');
   }
   
   find(query: any) {
@@ -28,7 +28,7 @@ export class MessageService {
     return this.rest.create(message);
   }
 
-//  remove(id: string, query: any) {
-//    return this.socket.remove(id, query);
-//  }
+  remove(id: string, query: any) {
+    return this.socket.remove(id, query);
+  }
 }

@@ -16,9 +16,7 @@ import { MessageService } from './message.service'
     <a routerLink="/chat" routerLinkActive="active">Chat</a>
   </nav>
   
-   <h2>{{title}}</h2>
-  
-  <h2>Feedback</h2>
+
   <!-- <ul>
     <li>Rest service: {{rest.debugString}}</li>
     <li>Socket service: {{socket.debugString}}</li>
@@ -41,6 +39,7 @@ export class AppComponent {
   
   // Called once when the component is early in its creation
   ngOnInit() {
+    //
     // this.messageService.find({}).then(messages => {
     //   this.messages = messages;
     //   console.log(messages);

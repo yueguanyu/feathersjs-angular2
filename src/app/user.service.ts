@@ -1,31 +1,38 @@
 import { Injectable } from '@angular/core';
-import { RestService, SocketService } from './feathers.service';
+import { FeathersService } from './feathers.service';
+import { User } from './user.model';
 
 @Injectable()
 export class UserService {
+  public users: Array<User>;
+  private service; // The Feathers 'users' service
 
-  constructor(private rest:RestService, private socket:SocketService) {
-    this.rest.app.authenticate().then( () => {
-    }, () => {
-    })
+  constructor(private feathersService: FeathersService) {
+    this.service = feathersService.app.service('users');
+    // Find all users
+    // this.service.find({}).then(() => {
+    //   this.users = page.data
+    // })
+
+    // We will also see when new users get created in real-time
+    // userService.on('created', user => {
+    //   this.users.push(user)
+    // })
   }
 
-  login(email, password) {
-    this.rest.app.authenticate({
-      strategy: 'jwt', 
-      endpoint: '/auth/local',
-      'email': email,
-      'password': password
-    }).then(function(result){
-      console.log('Authenticated!', result);
-    }).catch(function(error){
-      console.error('Error authenticating!', error);
-    });
-  }
-  
-  logout() {
+  find(query: any) {
+    return this.rest.find(query);
   }
 
-  isLoggedIn() {
+  get(id: string, query: any) {
+    return this.rest.get(id, query);
+  }
+
+  create(message: any) {
+    return this.rest.create(message);
+  }
+
+  remove(id: string, query: any) {
+    return this.socket.remove(id, query);
   }
 }

@@ -40,3 +40,9 @@ export class SocketService {
       .configure(authentication({path:'/auth/local'}));
   }
 }
+
+// This service is used to abstract the choice between Rest and SocketIO
+// throughout the app. RestService and SocketService can be used whenever
+// it is necessary to specialise.
+@Injectable()
+export class FeathersService extends RestService {}

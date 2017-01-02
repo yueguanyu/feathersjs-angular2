@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
-import { RestService, SocketService } from './feathers.service';
+import { RestService, SocketService, FeathersService } from './feathers.service';
 import { MessageService } from './message.service';
-import { UserService } from './user.service';
+import { AuthService } from './auth.service';
 
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authenticate.component';
@@ -14,6 +14,8 @@ import { SignUpComponent } from './signup.component';
 import { LoginComponent } from './login.component';
 import { ChatComponent } from './chat.component';
 import { PageNotFoundComponent } from './not-found.component';
+import { UserListComponent } from './user-list.component';
+
 
 @NgModule({
   imports: [
@@ -28,12 +30,14 @@ import { PageNotFoundComponent } from './not-found.component';
     SignUpComponent,
     LoginComponent,
     ChatComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserListComponent
   ],
   providers: [
     RestService,
-    UserService,
-    SocketService
+    AuthService,
+    SocketService,
+    FeathersService
    // MessageService
   ],
   bootstrap: [AppComponent]
