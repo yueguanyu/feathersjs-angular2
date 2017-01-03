@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     data: { title: 'FeatherJs Chat' }
   },
   { path: '',
-    redirectTo: '/chat',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
