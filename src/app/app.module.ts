@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RestService, SocketService, FeathersService } from './feathers.service';
 import { MessageService } from './message.service';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authenticate.component';
@@ -37,7 +38,8 @@ import { UserListComponent } from './user-list.component';
     RestService,
     AuthService,
     SocketService,
-    FeathersService
+    FeathersService,
+    UserService
    // MessageService
   ],
   bootstrap: [AppComponent]
