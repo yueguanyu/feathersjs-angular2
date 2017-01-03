@@ -12,27 +12,32 @@ export class UserService {
     // Find all users
     this.service.find().then((page) => {
       this.users = page.data;
+      console.log('Users: ', this.users);
     })
+    // On errors report to the console
+      .catch(error => {
+        console.log('Error: ', error);
+      })
 
     // We will also see when new users get created in real-time
-    userService.on('created', user => {
+    this.service.on('created', user => {
       this.users.push(user);
     })
   }
 
-  find(query: any) {
-    return this.rest.find(query);
-  }
+  // find(query: any) {
+  //   return this.rest.find(query);
+  // }
 
-  get(id: string, query: any) {
-    return this.rest.get(id, query);
-  }
+  // get(id: string, query: any) {
+  //   return this.rest.get(id, query);
+  // }
 
-  create(message: any) {
-    return this.rest.create(message);
-  }
+  // create(message: any) {
+  //   return this.rest.create(message);
+  // }
 
-  remove(id: string, query: any) {
-    return this.socket.remove(id, query);
-  }
+  // remove(id: string, query: any) {
+  //   return this.socket.remove(id, query);
+  // }
 }
