@@ -45,4 +45,4 @@ export class SocketService {
 // throughout the app. RestService and SocketService can be used whenever
 // it is necessary to specialise.
 @Injectable()
-export class FeathersService extends RestService {}
+export class FeathersService extends SocketService {}
