@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-chat',
@@ -16,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
           <aside class="sidebar col col-3 flex flex-column flex-space-between">
             <header class="flex flex-row flex-center">
               <h4 class="font-300 text-center">
-                <span class="font-600 online-count">0</span> users
+                <span class="font-600 online-count">{{ userService.users?.length }}</span> users
               </h4>
             </header>
   
@@ -43,8 +44,8 @@ import { Component, OnInit } from '@angular/core';
   `
 })
 export class ChatComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
