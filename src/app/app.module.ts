@@ -16,6 +16,7 @@ import { LoginComponent } from './login.component';
 import { ChatComponent } from './chat.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { UserListComponent } from './user-list.component';
+import { MessageListComponent } from './message-list.component';
 
 
 @NgModule({
@@ -32,15 +33,16 @@ import { UserListComponent } from './user-list.component';
     LoginComponent,
     ChatComponent,
     PageNotFoundComponent,
-    UserListComponent
+    UserListComponent,
+    MessageListComponent
   ],
   providers: [
     RestService,
     AuthService,
     SocketService,
     FeathersService,
-    UserService
-   // MessageService
+    UserService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

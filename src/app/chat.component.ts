@@ -29,7 +29,9 @@ import { Component, OnInit } from '@angular/core';
           </aside>
   
           <div class="flex flex-column col col-9">
-            <main class="chat flex flex-column flex-1 clear"></main>
+            <main class="chat flex flex-column flex-1 clear">
+              <app-message-list></app-message-list>
+            </main>
   
             <form class="flex flex-row flex-space-between" id="send-message">
               <input type="text" name="text" class="flex flex-1">
