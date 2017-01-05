@@ -24,20 +24,4 @@ export class UserService {
       this.users.push(user);
     })
   }
-
-  // find(query: any) {
-  //   return this.rest.find(query);
-  // }
-
-  // get(id: string, query: any) {
-  //   return this.rest.get(id, query);
-  // }
-
-  // create(message: any) {
-  //   return this.rest.create(message);
-  // }
-
-  // remove(id: string, query: any) {
-  //   return this.socket.remove(id, query);
-  // }
 }
