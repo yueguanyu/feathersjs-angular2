@@ -17,6 +17,7 @@ import { ChatComponent } from './chat.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { UserListComponent } from './user-list.component';
 import { MessageListComponent } from './message-list.component';
+import { MessageComponent } from './message.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MessageListComponent } from './message-list.component';
     ChatComponent,
     PageNotFoundComponent,
     UserListComponent,
-    MessageListComponent
+    MessageListComponent,
+    MessageComponent
   ],
   providers: [
     RestService,
@@ -42,7 +44,8 @@ import { MessageListComponent } from './message-list.component';
     SocketService,
     FeathersService,
     UserService,
-    MessageService
+    MessageService,
+    {provide: 'dummyUser', useValue: {avatar: 'https://placeimg.com/60/60/people', email: 'Anonymous'}}
   ],
   bootstrap: [AppComponent]
 })

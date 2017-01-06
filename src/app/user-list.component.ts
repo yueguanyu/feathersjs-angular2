@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { UserService } from './user.service'
 
 @Component({
@@ -7,7 +7,7 @@ import { UserService } from './user.service'
     <ul class="flex flex-column flex-1 list-unstyled user-list">
       <li *ngFor="let user of userService.users">
         <a className="block relative" href="#">
-          <img src="{{user.avatar || userService.PLACEHOLDER}}" className="avatar" />
+          <img src="{{user.avatar || dummyUser.avatar}}" className="avatar" />
           <span className="absolute username">{{user.email}}</span>
         </a>
       </li>
@@ -16,7 +16,7 @@ import { UserService } from './user.service'
 })
 export class UserListComponent implements OnInit {
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, @Inject('dummyUser') private dummyUser) {}
 
   ngOnInit() {
   }

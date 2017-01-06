@@ -5,13 +5,6 @@ import { FeathersService } from './feathers.service';
 export class MessageService {
   public messages;
   private service; // The Feathers 'messages' service
-  // A placeholder image if the user does not have one
-  private PLACEHOLDER = 'https://placeimg.com/60/60/people';
-  // An anonymous user if the message does not have that information
-  private dummyUser = {
-    avatar: this.PLACEHOLDER,
-    email: 'Anonymous'
-  }
 
   constructor(private feathersService: FeathersService) {
     this.service = feathersService.app.service('messages');

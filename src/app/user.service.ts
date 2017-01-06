@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FeathersService } from './feathers.service';
 import { User } from './user.model';
+ 
 
 @Injectable()
 export class UserService {
   public users: Array<User>;
   private service; // The Feathers 'users' service
 
-  public PLACEHOLDER = 'https://placeimg.com/60/60/people';
-  
   constructor(private feathersService: FeathersService) {
     this.service = feathersService.app.service('users');
     // Find all users
