@@ -11,7 +11,7 @@ const authentication = require('feathers-authentication-client');
 
 
 // Your base server URL here
-const HOST = 'http://feathersjs-aurerua.c9users.io'
+const HOST = 'https://feathersjs-aurerua.c9users.io'
 
 @Injectable()
 export class RestService {
