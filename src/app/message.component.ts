@@ -5,7 +5,7 @@ import { MessageService } from './message.service'
   selector: 'app-message',
   template: `
   <div class="message flex flex-row">
-    <img src="{{ sender.avatar }}" alt="{{ sender.email }}" class="avatar">
+    <img src="{{ sender.avatar || dummyUser.avatar }}" alt="{{ sender.email }}" class="avatar">
     <div class="message-wrapper">
       <p class="message-header">
         <span class="username font-600">{{ sender.email }}</span>
